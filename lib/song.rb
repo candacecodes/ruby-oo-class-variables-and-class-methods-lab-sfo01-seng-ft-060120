@@ -26,27 +26,27 @@ class Song
     @@genres. uniq 
   end 
   
-  def self.genre_count 
-    genre_hash = {} 
-    @@genres.each do |genre| 
-      if genre_hash[genre] 
-        genre_hash += 1 
-      else 
-        genre_hash = 1 
-      end 
-    end 
+  def self.genre_count
+    genre_hash = {}
+    @@genres.each do |genre_type|
+      if genre_hash[genre_type]
+        genre_hash[genre_type] += 1
+      else
+        genre_hash[genre_type] = 1
+      end
+    end
     genre_hash
-  end 
-  
-  def self.artist_count 
-    artist_hash = {} 
-    @@artists.each do |artist| 
-      if artist_hash[artist] 
-        artist_hash += 1 
-      else 
-        artist_hash = 1 
-      end 
-    end 
-    artist_hash 
-  end 
-end 
+  end
+
+  def self.artist_count
+    artist_hash = {}
+    @@artists.each do |artist_name|
+      if artist_hash[artist_name]
+        artist_hash[artist_name] += 1
+      else
+        artist_hash[artist_name] = 1
+      end
+    end
+    artist_hash
+  end
+end
